@@ -1,5 +1,6 @@
 import { Card, CardContent, makeStyles, Typography } from '@material-ui/core';
-import PropTypes from 'prop-types';
+import { useRecoilValue } from 'recoil';
+import { paisSeleccionadoState } from '../state/paises';
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -7,8 +8,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function InfoPais({ pais }) {
+export default function InfoPais() {
   const classes = useStyles();
+  const pais = useRecoilValue(paisSeleccionadoState);
 
   return (
     <Card className={classes.card}>
@@ -32,7 +34,3 @@ export default function InfoPais({ pais }) {
     </Card>
   );
 }
-
-InfoPais.propTypes = {
-  pais: PropTypes.object,
-};
