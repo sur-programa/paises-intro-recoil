@@ -1,6 +1,5 @@
 import { Box, Container } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DatosUsuario from './components/DatosUsuario';
 import Home from './components/Home';
 
 export default function App() {
@@ -9,9 +8,6 @@ export default function App() {
       <Box my={4}>
         <Router>
           <Switch>
-            <Route path="/usuarios/:id">
-              <DatosUsuario />
-            </Route>
             <Route path="/">
               <Home />
             </Route>
